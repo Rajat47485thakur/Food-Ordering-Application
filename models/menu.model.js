@@ -22,8 +22,8 @@ const menuSchema = new mongoose.Schema(
         store: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Store'
-        }
-    },{timestaps:true}
+        },
+    }, { timestaps: true }
 
 );
 

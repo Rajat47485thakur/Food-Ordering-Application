@@ -37,7 +37,10 @@ const UserSchema = new mongoose.Schema(
         preferences: {
             type: String,
             default: null
-        },
+        }, isActive: {
+            type: Boolean,
+            default: true
+        }
     }, { timestamps: true }
 );
 UserSchema.pre("save", async function (next) {

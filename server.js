@@ -6,6 +6,7 @@ const routes = require('./routes/routes');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
+// const CHAT_PORT = 9000;
 const url = 'mongodb://localhost:27017/foodStore';
 mongoose.connect(url)
     .then(() => {
@@ -16,32 +17,10 @@ mongoose.connect(url)
 app.use(express.json());
 app.use('/', routes);
 
+// const chatServer = new ChatServer();
+// chatServer.start(CHAT_PORT);
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
 });
 
-
-
-
-
-
-
-
-
-
-// import express from  'express';
-
-// import connectDB from './DB/index.db.js';
-// const PORT = process.env.PORT || 8000;
-
-// const app = express();
-// connectDB()
-//     .then(() => {
-//         app.listen(process.env.PORT ||8000, () => {
-//             console.log(`⚙️  Server is running at port : ${PORT}`);
-//         })
-//     })
-//     .catch((err) => {
-//         console.log(`MONGO db connection failed !!!${err}`)
-//     })
